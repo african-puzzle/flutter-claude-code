@@ -33,7 +33,8 @@ See [PLUGIN_INSTALLATION.md](PLUGIN_INSTALLATION.md) for detailed installation i
 
 - **[PLUGIN_INSTALLATION.md](PLUGIN_INSTALLATION.md)** - Installation guide
 - **[AGENT_USAGE_SCENARIOS.md](AGENT_USAGE_SCENARIOS.md)** - Practical usage examples
-- **[CONTRIBUTING.md](CONTRIBUTING.md)** - Architecture, implementation, and contribution guide
+- **[CONTRIBUTING.md](CONTRIBUTING.md)** - Contributing guidelines and architecture reference
+- **[WORKFLOW_DIAGRAMS.md](WORKFLOW_DIAGRAMS.md)** - Visual workflow diagrams
 
 ## System Architecture
 
@@ -112,23 +113,6 @@ Performance Optimization → Testing → Deployment
 - Profile and optimize performance
 - Write comprehensive tests
 - Deploy to App Store and Play Store
-
-## Implementation Priority
-
-### Phase 1: Design-to-Implementation (Weeks 1-2)
-Implement agents 1.1 through 1.5 for the core design workflow.
-
-### Phase 2: Architecture & Quality (Week 3)
-Implement agents 2.1, 2.2, and 6.1 for code organization and testing.
-
-### Phase 3: Platform Integration (Week 4)
-Implement agents 3.1, 3.2, and 3.3 for native integrations.
-
-### Phase 4: API Integration (Week 5)
-Implement agents 5.1, 5.2, 5.3, and 5.4 for backend connectivity.
-
-### Phase 5: Performance & Deployment (Week 6)
-Implement agents 4.1, 4.2, 6.2, and 6.3 for optimization and deployment.
 
 ## Documentation Foundation
 
@@ -213,15 +197,15 @@ The system tracks effectiveness through:
 - **Performance**: Frame rendering, memory usage, app size
 - **Deployment Success**: App store approval rate, deployment time
 
-## Complementary Skills
+## Available Skills
 
-In addition to the sub-agents, create these skills for on-demand patterns:
+The `flutter-patterns` skill provides on-demand reference for:
 
-1. **flutter-widget-patterns**: Common widget compositions
-2. **flutter-animation-cookbook**: Reusable animation implementations
-3. **flutter-testing-recipes**: Test templates
-4. **flutter-performance-patterns**: Optimization patterns
-5. **flutter-security-guide**: Security best practices
+1. **Widget Patterns**: Common widget compositions and best practices
+2. **Animation Patterns**: Reusable animation implementations
+3. **Testing Patterns**: Test templates and strategies
+4. **Performance Patterns**: Optimization techniques
+5. **Security Patterns**: Security best practices
 
 ## Agent Interaction Matrix
 
@@ -233,39 +217,36 @@ Agents are designed to work together:
 - **4.1 (Analyzer)** feeds findings to 4.2 (Optimizer)
 - **6.2 (iOS Deploy)** and **6.3 (Android Deploy)** work in parallel
 
-## File Structure
+## Repository Structure
 
 ```
-flutter-cc/
-├── README.md (this file)
-├── FLUTTER_AGENT_ARCHITECTURE_PLAN.md (complete specification)
-├── IMPLEMENTATION_GUIDE.md (implementation instructions)
-└── AGENT_USAGE_SCENARIOS.md (practical examples)
+flutter-claude-code/
+├── README.md                      # Overview and quick start
+├── PLUGIN_INSTALLATION.md         # Installation instructions
+├── AGENT_USAGE_SCENARIOS.md       # Practical usage examples
+├── CONTRIBUTING.md                # Contributing guidelines
+├── WORKFLOW_DIAGRAMS.md           # Visual workflow diagrams
+├── ARCHITECTURE_NOTES.md          # Technical architecture notes
+├── .claude/                       # Agent and skill definitions
+│   ├── agents/                    # All agent definitions
+│   └── skills/                    # All skill definitions
+└── flutter-*/                     # Plugin directories
 ```
 
-## Next Steps
+## Getting Started
 
-1. **Review** the architecture plan in `FLUTTER_AGENT_ARCHITECTURE_PLAN.md`
-2. **Study** implementation details in `IMPLEMENTATION_GUIDE.md`
-3. **Explore** practical scenarios in `AGENT_USAGE_SCENARIOS.md`
-4. **Implement** Phase 1 agents (Design-to-Implementation)
-5. **Test** with real designs and projects
-6. **Expand** to additional phases based on needs
+1. **Install** the plugins using the instructions in `PLUGIN_INSTALLATION.md`
+2. **Explore** practical usage examples in `AGENT_USAGE_SCENARIOS.md`
+3. **Review** workflow diagrams in `WORKFLOW_DIAGRAMS.md`
+4. **Start** building with the agents that match your needs
 
 ## Contributing
 
-This architecture is designed to be:
-- **Modular**: Implement agents incrementally
-- **Extensible**: Add new agents for specific needs
-- **Adaptable**: Customize agents for your workflow
-- **Scalable**: Handle projects of any size
-
-## Support
-
-For questions or issues:
-1. Consult the detailed documentation files
-2. Review the usage scenarios for examples
-3. Check the implementation guide for technical details
+Contributions are welcome! See `CONTRIBUTING.md` for guidelines on:
+- Adding new agents
+- Improving existing agents
+- Updating documentation
+- Testing and quality standards
 
 ## Documentation Coverage
 

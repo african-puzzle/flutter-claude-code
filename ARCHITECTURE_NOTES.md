@@ -30,13 +30,9 @@ Using symlinks instead of file duplication provides several benefits:
 - `AGENT_USAGE_SCENARIOS.md` - Practical examples and use cases
 
 ### Developer/Contributor Documentation
-- `CONTRIBUTING.md` - Consolidated architecture, implementation, and contribution guide
-- `FLUTTER_AGENT_ARCHITECTURE_PLAN.md` - Detailed architecture specification (reference)
-- `IMPLEMENTATION_GUIDE.md` - Implementation details (reference)
-- `WORKFLOW_DIAGRAMS.md` - Visual workflow diagrams (reference)
-
-### Documentation Consolidation
-`CONTRIBUTING.md` serves as the primary contributor guide, with references to the detailed docs above for deep dives.
+- `CONTRIBUTING.md` - Contributing guidelines and architecture reference
+- `WORKFLOW_DIAGRAMS.md` - Visual workflow diagrams
+- `ARCHITECTURE_NOTES.md` - Technical architecture and maintenance notes (this file)
 
 ## Maintenance Guidelines
 

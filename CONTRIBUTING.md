@@ -90,12 +90,12 @@ flutter-claude-code/
 
 ---
 
-## Detailed Architecture Documentation
+## Additional Documentation
 
-For complete architecture details, see the original documentation files:
-- `FLUTTER_AGENT_ARCHITECTURE_PLAN.md` - Complete specification
-- `IMPLEMENTATION_GUIDE.md` - Implementation instructions
-- `WORKFLOW_DIAGRAMS.md` - Visual workflows
+For more details, see:
+- `WORKFLOW_DIAGRAMS.md` - Visual workflow diagrams
+- `ARCHITECTURE_NOTES.md` - Technical architecture notes
+- `AGENT_USAGE_SCENARIOS.md` - Practical usage examples
 
 ---
 
@@ -280,10 +280,10 @@ To add a new agent:
 
 ## Getting Help
 
-- Review `AGENT_USAGE_SCENARIOS.md` for examples
-- Check `WORKFLOW_DIAGRAMS.md` for visual guides
-- Refer to implementation details in `IMPLEMENTATION_GUIDE.md`
-- Check architecture decisions in `FLUTTER_AGENT_ARCHITECTURE_PLAN.md`
+- Review `AGENT_USAGE_SCENARIOS.md` for practical examples
+- Check `WORKFLOW_DIAGRAMS.md` for visual workflow guides
+- See `ARCHITECTURE_NOTES.md` for technical architecture details
+- Read the agent definitions in `.claude/agents/` for specific capabilities
 
 ---
 
