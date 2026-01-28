@@ -1,10 +1,15 @@
 # Flutter Development Ecosystem - Complete Agent Architecture
 
+> **African Puzzle Works Customized Version**
+> This is a fork of [flutter-claude-code](https://github.com/cleydson/flutter-claude-code) customized for the African Puzzle Works mobile app. It includes the complete original ecosystem plus the **African Puzzle Works Design System** skill.
+
 This repository contains a comprehensive Flutter development ecosystem powered by 19 specialized Claude Code agents and skills, available as modular plugins.
 
 ## Overview
 
-This system provides **19 specialized agents** and **1 comprehensive skill** organized into **6 categories** that enable seamless Flutter development from design to production deployment on iOS and Android.
+This system provides **19 specialized agents** and **2 comprehensive skills** organized into **6 categories** that enable seamless Flutter development from design to production deployment on iOS and Android.
+
+**Note:** This is a customized fork that includes the **African Puzzle Works Design System** skill, which provides design tokens, component specifications, and theme configuration for the African Puzzle Works mobile app.
 
 ## Installation
 
@@ -12,8 +17,13 @@ This repository is structured as a Claude Code plugin marketplace. You can insta
 
 ### Install Everything (Recommended)
 ```bash
-/plugin marketplace add https://github.com/cleydson/flutter-claude-code
+# For African Puzzle Works customized version (includes design system)
+/plugin marketplace add https://github.com/african-puzzle/flutter-claude-code
 /plugin install flutter-all@flutter-claude-code
+
+# For original version
+# /plugin marketplace add https://github.com/cleydson/flutter-claude-code
+# /plugin install flutter-all@flutter-claude-code
 ```
 
 ### Install Specific Categories
@@ -25,6 +35,13 @@ This repository is structured as a Claude Code plugin marketplace. You can insta
 /plugin install flutter-backend@flutter-claude-code               # Backend Integration
 /plugin install flutter-deployment@flutter-claude-code            # iOS & Android Deployment
 /plugin install flutter-patterns@flutter-claude-code              # Patterns & Best Practices Skill
+```
+
+### African Puzzle Works Custom Installation
+This fork includes the African Puzzle Works Design System:
+```bash
+# The african-puzzle-works-design skill is included in this repository
+# and automatically available to the flutter-ui-designer agent
 ```
 
 See [PLUGIN_INSTALLATION.md](PLUGIN_INSTALLATION.md) for detailed installation instructions and plugin documentation.
@@ -199,6 +216,7 @@ The system tracks effectiveness through:
 
 ## Available Skills
 
+### flutter-patterns
 The `flutter-patterns` skill provides on-demand reference for:
 
 1. **Widget Patterns**: Common widget compositions and best practices
@@ -206,6 +224,15 @@ The `flutter-patterns` skill provides on-demand reference for:
 3. **Testing Patterns**: Test templates and strategies
 4. **Performance Patterns**: Optimization techniques
 5. **Security Patterns**: Security best practices
+
+### african-puzzle-works-design
+The `african-puzzle-works-design` skill provides the complete design system for the African Puzzle Works mobile app:
+
+1. **Design Tokens**: Colors, typography, spacing system (8pt grid), border radii, shadows
+2. **Component Specifications**: 30+ component specs with Flutter widget mappings
+3. **Layout Patterns**: Screen templates, navigation flows, loading/error/empty states
+4. **Flutter Theme**: Complete ThemeData configuration with ColorScheme and TextTheme
+5. **Integration**: Automatically triggered by flutter-ui-designer for African Puzzle Works projects
 
 ## Agent Interaction Matrix
 
@@ -222,15 +249,62 @@ Agents are designed to work together:
 ```
 flutter-claude-code/
 ├── README.md                      # Overview and quick start
+├── CLAUDE.md                      # Project-specific instructions
 ├── PLUGIN_INSTALLATION.md         # Installation instructions
 ├── AGENT_USAGE_SCENARIOS.md       # Practical usage examples
 ├── CONTRIBUTING.md                # Contributing guidelines
 ├── WORKFLOW_DIAGRAMS.md           # Visual workflow diagrams
 ├── ARCHITECTURE_NOTES.md          # Technical architecture notes
 ├── .claude/                       # Agent and skill definitions
-│   ├── agents/                    # All agent definitions
-│   └── skills/                    # All skill definitions
-└── flutter-*/                     # Plugin directories
+│   ├── agents/                    # 19 specialized agent definitions
+│   │   ├── flutter-ui-designer.md
+│   │   ├── flutter-ui-implementer.md
+│   │   ├── flutter-device-orchestrator.md
+│   │   ├── flutter-ui-comparison.md
+│   │   ├── flutter-design-iteration-coordinator.md
+│   │   ├── flutter-architect.md
+│   │   ├── flutter-state-management.md
+│   │   ├── flutter-ios-integration.md
+│   │   ├── flutter-android-integration.md
+│   │   ├── flutter-platform-channel-architect.md
+│   │   ├── flutter-performance-analyzer.md
+│   │   ├── flutter-performance-optimizer.md
+│   │   ├── flutter-rest-api.md
+│   │   ├── flutter-firebase.md
+│   │   ├── flutter-aws.md
+│   │   ├── flutter-graphql.md
+│   │   ├── flutter-testing.md
+│   │   ├── flutter-ios-deployment.md
+│   │   └── flutter-android-deployment.md
+│   └── skills/                    # Reusable skill definitions
+│       └── flutter-patterns/      # Flutter patterns & best practices
+├── african-puzzle-works-design/   # African Puzzle Works Design System skill
+│   ├── SKILL.md                   # Skill definition and overview
+│   ├── references/                # Design system documentation
+│   │   ├── tokens.md              # Colors, typography, spacing, shadows
+│   │   ├── components.md          # Component specifications
+│   │   ├── patterns.md            # Layout patterns and screen templates
+│   │   └── flutter-theme.md       # ThemeData implementation guide
+│   └── assets/                    # Design assets and theme code
+│       ├── screens/               # Screen reference exports
+│       └── theme/                 # Flutter theme implementation
+│           └── app_theme.dart     # Complete ThemeData configuration
+├── flutter-all/                   # Meta-plugin for full installation
+│   └── skills/
+├── flutter-ui/                    # UI & Design agents plugin
+│   └── agents/
+├── flutter-testing-performance/   # Testing & Performance plugin
+│   └── agents/
+├── flutter-architecture/          # Architecture & State Management plugin
+│   └── agents/
+├── flutter-platform/              # Platform Integration plugin
+│   └── agents/
+├── flutter-backend/               # Backend Integration plugin
+│   └── agents/
+├── flutter-deployment/            # iOS & Android Deployment plugin
+│   └── agents/
+└── flutter-patterns/              # Patterns & Best Practices skill plugin
+    └── skills/
 ```
 
 ## Getting Started
