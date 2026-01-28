@@ -82,6 +82,35 @@ See [african-puzzle-works-design/references/figma-sync-strategy.md](african-puzz
 
 See [PLUGIN_INSTALLATION.md](PLUGIN_INSTALLATION.md) for detailed installation instructions and plugin documentation.
 
+## To Do: Items to Add to Figma Component Registry
+
+- [X] `Button` - Primary, Secondary, Text, Icon, Segmented button variants with all states
+- [X] `Bottom Sheets` - Action sheet, Selection sheet, Calendar sheet, Price sheet variations
+- [X] `View Headers` - 7 header variants (Default, Project, Calendar, Search, Tabs, Album, Contact)
+- [X] `Primitives / Colors` - Complete color palette with all shades (Primary, Basic, Success, Info, Warning, Danger)
+- [X] `Icons` - White, Dark, and Other icon sets
+- [ ] `Bottom Nav` - Bottom navigation bar with icons
+- [ ] `Cards` -  
+- [ ] `Inputs` - Text input with validation and error states
+- [ ] `Forms` - Form with validation and error states
+- [ ] `List` - List with items and separators
+- [ ] `Navigation` - Bottom navigation bar with icons
+- [ ] `Progress` - Progress indicator with different styles
+- [ ] `Audio player` - Audio player with controls
+- [ ] `Audio Recorder` - Audio recorder with controls
+- [ ] `Project List` - Project list with items
+- [ ] `Project Detail` - Project detail with items
+- [ ] `Calendar List` - Calendar list with items
+- [ ] `Search` - Search with results
+- [ ] `Tabs` - Tabs with content
+- [ ] `Album` - Album with images
+- [ ] `Contact's Projects` - Contact with projects
+- [ ] `Measurement Card` - Measurement card with details
+- [ ] `Sidebar` - Sidebar with navigation
+- [ ] `Image Carousel` - Image carousel with navigation
+- [ ] `Photo Detail view` - Photo detail view with navigation and menu
+
+
 ## Quick Links
 
 ### Installation & Usage
