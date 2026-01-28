@@ -41,6 +41,98 @@ Use this agent for:
 Before analyzing the design, reference the african-puzzle-works-design skill:
 "I'll load the african-puzzle-works-design skill to access the design system context."
 Then read: @african-puzzle-works-design/SKILL.md
+Then read: @african-puzzle-works-design/FIGMA_REGISTRY.md (for node IDs)
+```
+
+**Figma-First Workflow**:
+
+When implementing components, ALWAYS fetch live data from Figma:
+
+1. **Check if user provided Figma URL**:
+   - If yes: Extract fileKey and nodeId automatically, fetch data, skip registry
+   - If no: Continue to step 2
+
+2. **Look up component in FIGMA_REGISTRY.md**:
+   - Exact match found → Use node ID from registry
+   - No match → Try fuzzy matching (e.g., "button" → "Buttons")
+   - Still no match → Go to fallback workflow (see below)
+
+3. **Fetch live Figma data using MCP**:
+   ```
+   mcp__figma__get_screenshot(fileKey="8S2Jt5xKHfTmlI8rSR6AcX", nodeId="[from-registry]")
+   mcp__figma__get_design_context(fileKey="8S2Jt5xKHfTmlI8rSR6AcX", nodeId="[from-registry]")
+   ```
+
+4. **Cross-reference with documentation**:
+   - Compare live Figma data with `references/*.md` specs
+   - If discrepancy: Use Figma data (it's newer), flag the difference
+
+5. **Implement with live values**:
+   - Use current colors, measurements, spacing from Figma
+   - Map to design tokens where applicable
+
+**Fallback Workflow** (when component not found or ambiguous):
+
+Reference: `@african-puzzle-works-design/references/figma-fallback-strategy.md`
+
+1. **Parse Figma URL if provided**:
+   - Extract fileKey and nodeId from URL
+   - Fetch directly, bypass registry
+
+2. **Fuzzy match registry**:
+   - Suggest close matches (e.g., "button" → "Buttons")
+   - Present options to user
+
+3. **Explore Figma structure** (if no matches):
+   ```
+   mcp__figma__get_metadata(fileKey="8S2Jt5xKHfTmlI8rSR6AcX", nodeId="0:1")
+   ```
+   - Parse structure to find relevant components
+   - Present list to user
+
+4. **Handle multiple variants**:
+   - If component has multiple variants (e.g., 7 View Header types)
+   - Use AskUserQuestion to let user select correct variant
+   - Show descriptions of each variant
+   - Offer "Custom (provide URL)" option
+
+5. **Visual confirmation**:
+   - Fetch screenshot of identified component
+   - Show to user for confirmation before implementing
+   - Use AskUserQuestion: "Is this the correct component?"
+
+6. **Add to registry** (optional):
+   - Offer to add newly-found component to FIGMA_REGISTRY.md
+   - Improves system for future use
+
+**AskUserQuestion for Component Selection**:
+
+When ambiguous, use this pattern:
+
+```dart
+AskUserQuestion(
+  questions: [
+    {
+      question: "Which [component] variant should I implement?",
+      header: "[Component Type]",
+      multiSelect: false,
+      options: [
+        {
+          label: "[Variant 1 Name]",
+          description: "[Usage context] - [Key features]"
+        },
+        {
+          label: "[Variant 2 Name]",
+          description: "[Usage context] - [Key features]"
+        },
+        {
+          label: "Custom (provide Figma URL)",
+          description: "I'll paste the Figma URL for a specific variant"
+        }
+      ]
+    }
+  ]
+)
 ```
 
 **Integration Instructions**:
