@@ -9,8 +9,47 @@ description: Design system tokens, component specifications, and Flutter theme f
 
 This skill provides design tokens, component specifications, and patterns for the African Puzzle Works Flutter app. Reference this when implementing screens from Figma or reviewing code for design compliance.
 
+## ⚡ Figma-First Approach (IMPORTANT)
+
+**This design system uses Figma as the source of truth, not static screenshots.**
+
+### Always Fetch Live Data from Figma
+
+When implementing components or screens:
+
+1. **Look up component in [FIGMA_REGISTRY.md](FIGMA_REGISTRY.md)** to get node ID
+2. **Fetch live screenshot**: Use `mcp__figma__get_screenshot` with file key and node ID
+3. **Fetch live specs**: Use `mcp__figma__get_design_context` for measurements, colors, typography
+4. **Fetch design tokens**: Use `mcp__figma__get_variable_defs` for token values
+5. **Cross-reference with docs**: Use `references/*.md` for additional context and Flutter implementation patterns
+
+### Example Workflow
+
+```
+User: "Implement the primary button from the design system"
+
+Claude:
+1. Checks FIGMA_REGISTRY.md → Buttons node ID: 362-6
+2. Calls mcp__figma__get_screenshot(fileKey="8S2Jt5xKHfTmlI8rSR6AcX", nodeId="362-6")
+3. Calls mcp__figma__get_design_context(fileKey="8S2Jt5xKHfTmlI8rSR6AcX", nodeId="362-6")
+4. Gets live measurements, colors, spacing
+5. References references/components.md for Flutter implementation pattern
+6. Implements with current Figma values, not cached data
+```
+
+### Why This Matters
+
+- ✅ **Always up-to-date**: Figma changes are immediately available
+- ✅ **No stale screenshots**: Eliminates sync issues
+- ✅ **Single source of truth**: Figma is authoritative
+- ✅ **Automatic validation**: Compare implementation against live Figma
+
+**See [references/figma-sync-strategy.md](references/figma-sync-strategy.md) for complete strategy.**
+
 ## Quick Start
 
+- **Figma File Key**: `8S2Jt5xKHfTmlI8rSR6AcX`
+- **Component Registry**: [FIGMA_REGISTRY.md](FIGMA_REGISTRY.md)
 - **Theme file**: Copy `assets/theme/app_theme.dart` to your project
 - **Apply theme**:
   ```dart
@@ -252,16 +291,30 @@ Agent (with skill loaded):
 
 ```
 african-puzzle-works-design/
-├── SKILL.md                    # This file
+├── SKILL.md                      # This file - main skill documentation
+├── FIGMA_REGISTRY.md             # Figma node ID registry for MCP fetching
 ├── references/
-│   ├── tokens.md               # Complete design token documentation
-│   ├── components.md           # Component specs with Flutter examples
-│   ├── patterns.md             # Layout patterns and screen templates
-│   └── flutter-theme.md        # Theme implementation guide
+│   ├── tokens.md                 # Complete design token documentation
+│   ├── components.md             # Component specs with Flutter examples
+│   ├── patterns.md               # Layout patterns and screen templates
+│   ├── flutter-theme.md          # Theme implementation guide
+│   ├── measurements.md           # Precise component measurements
+│   ├── animations.md             # Animation specifications
+│   ├── states.md                 # Component state documentation
+│   ├── icons.md                  # Icon library and usage
+│   ├── elevation.md              # Shadow system specifications
+│   ├── responsive.md             # Responsive behavior guidelines
+│   ├── dark-mode.md              # Dark theme specifications
+│   ├── edge-cases.md             # Edge case handling patterns
+│   └── figma-sync-strategy.md    # Figma sync strategy (IMPORTANT)
 └── assets/
     ├── theme/
-    │   └── app_theme.dart      # Ready-to-use Flutter theme file
-    └── screens/                # Reference screenshots (to be added)
+    │   └── app_theme.dart        # Ready-to-use Flutter theme file
+    └── screens/                  # Reference screenshots (supplementary)
+        ├── components/           # Component screenshots by type
+        ├── screens/              # Full screen screenshots
+        ├── redlines/             # Annotated measurement screenshots
+        └── examples/             # Edge case examples
 ```
 
 ## Next Steps
@@ -281,13 +334,34 @@ african-puzzle-works-design/
 
 ## Resources
 
+### Core Documentation
+- **Figma Node Registry**: [FIGMA_REGISTRY.md](FIGMA_REGISTRY.md) - **Start here for MCP fetching**
+- **Figma Sync Strategy**: [references/figma-sync-strategy.md](references/figma-sync-strategy.md) - **How to stay in sync**
 - **Figma Design System**: [African Puzzle Design System](https://www.figma.com/design/8S2Jt5xKHfTmlI8rSR6AcX/African-Puzzle-Design-System)
+
+### Implementation Guides
 - **Flutter Theme Guide**: [references/flutter-theme.md](references/flutter-theme.md)
 - **Component Library**: [references/components.md](references/components.md)
 - **Layout Patterns**: [references/patterns.md](references/patterns.md)
+- **Design Tokens**: [references/tokens.md](references/tokens.md)
+
+### Detailed Specifications
+- **Measurements**: [references/measurements.md](references/measurements.md) - Pixel-perfect dimensions
+- **Animations**: [references/animations.md](references/animations.md) - Transition specs
+- **States**: [references/states.md](references/states.md) - Interactive states
+- **Icons**: [references/icons.md](references/icons.md) - Icon usage
+- **Elevation**: [references/elevation.md](references/elevation.md) - Shadow system
+- **Responsive**: [references/responsive.md](references/responsive.md) - Mobile-first patterns
+- **Dark Mode**: [references/dark-mode.md](references/dark-mode.md) - Dark theme
+- **Edge Cases**: [references/edge-cases.md](references/edge-cases.md) - Error/empty/loading states
 
 ---
 
-**Version**: 1.0
+**Version**: 2.0.0
 **Last Updated**: 2026-01-28
 **Maintainer**: African Puzzle Works Team
+
+**Changelog**:
+- v2.0.0 (2026-01-28): Added Figma-first sync strategy, 8 comprehensive specification files, node registry
+- v1.1.0 (2026-01-28): Added View Headers, Bottom Sheets
+- v1.0.0 (2026-01-15): Initial design system release

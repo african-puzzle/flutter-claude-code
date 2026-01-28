@@ -41,6 +41,98 @@ Use this agent for:
 Before analyzing the design, reference the african-puzzle-works-design skill:
 "I'll load the african-puzzle-works-design skill to access the design system context."
 Then read: @african-puzzle-works-design/SKILL.md
+Then read: @african-puzzle-works-design/FIGMA_REGISTRY.md (for node IDs)
+```
+
+**Figma-First Workflow**:
+
+When implementing components, ALWAYS fetch live data from Figma:
+
+1. **Check if user provided Figma URL**:
+   - If yes: Extract fileKey and nodeId automatically, fetch data, skip registry
+   - If no: Continue to step 2
+
+2. **Look up component in FIGMA_REGISTRY.md**:
+   - Exact match found → Use node ID from registry
+   - No match → Try fuzzy matching (e.g., "button" → "Buttons")
+   - Still no match → Go to fallback workflow (see below)
+
+3. **Fetch live Figma data using MCP**:
+   ```
+   mcp__figma__get_screenshot(fileKey="8S2Jt5xKHfTmlI8rSR6AcX", nodeId="[from-registry]")
+   mcp__figma__get_design_context(fileKey="8S2Jt5xKHfTmlI8rSR6AcX", nodeId="[from-registry]")
+   ```
+
+4. **Cross-reference with documentation**:
+   - Compare live Figma data with `references/*.md` specs
+   - If discrepancy: Use Figma data (it's newer), flag the difference
+
+5. **Implement with live values**:
+   - Use current colors, measurements, spacing from Figma
+   - Map to design tokens where applicable
+
+**Fallback Workflow** (when component not found or ambiguous):
+
+Reference: `@african-puzzle-works-design/references/figma-fallback-strategy.md`
+
+1. **Parse Figma URL if provided**:
+   - Extract fileKey and nodeId from URL
+   - Fetch directly, bypass registry
+
+2. **Fuzzy match registry**:
+   - Suggest close matches (e.g., "button" → "Buttons")
+   - Present options to user
+
+3. **Explore Figma structure** (if no matches):
+   ```
+   mcp__figma__get_metadata(fileKey="8S2Jt5xKHfTmlI8rSR6AcX", nodeId="0:1")
+   ```
+   - Parse structure to find relevant components
+   - Present list to user
+
+4. **Handle multiple variants**:
+   - If component has multiple variants (e.g., 7 View Header types)
+   - Use AskUserQuestion to let user select correct variant
+   - Show descriptions of each variant
+   - Offer "Custom (provide URL)" option
+
+5. **Visual confirmation**:
+   - Fetch screenshot of identified component
+   - Show to user for confirmation before implementing
+   - Use AskUserQuestion: "Is this the correct component?"
+
+6. **Add to registry** (optional):
+   - Offer to add newly-found component to FIGMA_REGISTRY.md
+   - Improves system for future use
+
+**AskUserQuestion for Component Selection**:
+
+When ambiguous, use this pattern:
+
+```dart
+AskUserQuestion(
+  questions: [
+    {
+      question: "Which [component] variant should I implement?",
+      header: "[Component Type]",
+      multiSelect: false,
+      options: [
+        {
+          label: "[Variant 1 Name]",
+          description: "[Usage context] - [Key features]"
+        },
+        {
+          label: "[Variant 2 Name]",
+          description: "[Usage context] - [Key features]"
+        },
+        {
+          label: "Custom (provide Figma URL)",
+          description: "I'll paste the Figma URL for a specific variant"
+        }
+      ]
+    }
+  ]
+)
 ```
 
 **Integration Instructions**:
@@ -52,11 +144,14 @@ When the skill is loaded, you must:
    - Use spacing tokens: `AppSpacing.spacingMedium` (16px) instead of hardcoded values
    - Apply typography tokens: `AppTypography.h3` for headings
    - Use border radius tokens: `AppRadius.radiusRounded` (8px)
+   - See `references/tokens.md` for complete token list
 
 2. **Reference Component Specifications**:
    - Check if the component exists in the design system (Buttons, Cards, Navigation, etc.)
    - Use the specified Flutter implementation from `references/components.md`
    - Follow the exact styling specifications (colors, spacing, shadows)
+   - Verify component states in `references/states.md` (default, hover, pressed, disabled, focus, loading)
+   - Check precise measurements in `references/measurements.md` for pixel-perfect implementation
 
 3. **Follow View Header Patterns**:
    - Identify which View Header variant applies (Default, Project, Calendar, Search, Tabs, Album, Contact)
@@ -77,6 +172,42 @@ When the skill is loaded, you must:
 6. **Apply Theme**:
    - Reference `assets/theme/app_theme.dart` for theme implementation
    - Use `Theme.of(context)` where possible for automatic theming
+   - Consider dark mode adaptations from `references/dark-mode.md`
+
+7. **Use Precise Measurements**:
+   - Consult `references/measurements.md` for exact dimensions (padding, margins, heights)
+   - Follow specifications for button sizes, icon containers, text sizing
+   - Ensure all measurements match the design system precisely
+
+8. **Plan Animations & Transitions**:
+   - Reference `references/animations.md` for animation specifications
+   - Use specified durations (150-300ms for most transitions)
+   - Apply correct animation curves (Curves.easeInOut, Curves.easeOut)
+   - Plan implicit vs explicit animations based on performance needs
+
+9. **Select Icons**:
+   - Use Material Icons from Flutter's `Icons` class
+   - Check `references/icons.md` for icon size specifications (24px default)
+   - Verify icon colors match design system tokens
+   - Ensure 48dp minimum touch targets for interactive icons
+
+10. **Apply Elevation & Shadows**:
+    - Reference `references/elevation.md` for shadow specifications
+    - Use Material elevation levels (0dp, 2dp, 4dp, 6dp, 8dp, 12dp)
+    - Apply correct shadow opacity and blur radius for each level
+    - Follow elevation hierarchy rules
+
+11. **Plan Responsive Behavior**:
+    - Consult `references/responsive.md` for breakpoints and adaptations
+    - Design for mobile-first (360dp-480dp width)
+    - Plan safe area handling for notches and home indicators
+    - Consider landscape orientation adaptations
+
+12. **Handle Edge Cases**:
+    - Reference `references/edge-cases.md` for error, loading, and empty states
+    - Plan text overflow strategies (ellipsis, expandable, multi-line)
+    - Design error handling UI (network errors, validation errors)
+    - Include loading indicators for async operations
 
 **Example Output with Skill**:
 ```markdown
