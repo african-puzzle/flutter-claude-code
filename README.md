@@ -9,7 +9,26 @@ This repository contains a comprehensive Flutter development ecosystem powered b
 
 This system provides **19 specialized agents** and **2 comprehensive skills** organized into **6 categories** that enable seamless Flutter development from design to production deployment on iOS and Android.
 
-**Note:** This is a customized fork that includes the **African Puzzle Works Design System** skill, which provides design tokens, component specifications, and theme configuration for the African Puzzle Works mobile app.
+**Note:** This is a customized fork that includes the **African Puzzle Works Design System** skill (v2.0.0), which provides design tokens, component specifications, and theme configuration for the African Puzzle Works mobile app. **Key differentiator**: This fork implements a **Figma-first approach** using the Figma MCP server to fetch live design data, eliminating stale screenshot issues and ensuring implementations are always current with the latest designs.
+
+## What's New in This Fork
+
+### v2.0.0 - Figma Live Sync Strategy (PR #4)
+**Major Innovation**: Eliminates stale screenshot issues by using Figma as the source of truth
+
+- ✨ **Figma MCP Integration**: Direct integration with Figma MCP server for real-time design data
+- 📋 **Component Registry**: [FIGMA_REGISTRY.md](african-puzzle-works-design/FIGMA_REGISTRY.md) maps all components to Figma node IDs
+- 🔄 **Live Fetching**: Always fetch latest design during implementation (no more stale screenshots)
+- 🧠 **Intelligent Fallback**: 5-step progressive discovery when components not in registry
+- 📊 **8 New Reference Docs**: measurements, animations, states, icons, elevation, responsive, dark-mode, edge-cases
+- 📸 **Organized Screenshots**: Restructured into components/, screens/, redlines/, examples/ for better organization
+- 📚 **Visual Quick Start Guide**: Decision tree flowchart for component lookup workflows
+
+### v1.1.0 - Screen Assets Addition (PR #3)
+- 📸 Added contact, profile, and splash screen reference screenshots
+- 🎨 Expanded visual reference library for implementation
+
+See [african-puzzle-works-design/SKILL.md](african-puzzle-works-design/SKILL.md) for complete changelog and version history.
 
 ## Installation
 
@@ -44,14 +63,41 @@ This fork includes the African Puzzle Works Design System:
 # and automatically available to the flutter-ui-designer agent
 ```
 
+### Figma MCP Server Setup (African Puzzle Works Fork)
+To enable live Figma sync, configure the Figma MCP server:
+
+```bash
+# Verify MCP server is available
+claude mcp list
+
+# If not configured, add Figma MCP server
+claude mcp add --transport http figma https://mcp.figma.com/mcp
+```
+
+Once configured, agents will automatically fetch live design data from Figma instead of using static screenshots.
+
+**Figma Design System**: [African Puzzle Design System](https://www.figma.com/design/8S2Jt5xKHfTmlI8rSR6AcX/African-Puzzle-Design-System) (File Key: `8S2Jt5xKHfTmlI8rSR6AcX`)
+
+See [african-puzzle-works-design/references/figma-sync-strategy.md](african-puzzle-works-design/references/figma-sync-strategy.md) for complete workflow details.
+
 See [PLUGIN_INSTALLATION.md](PLUGIN_INSTALLATION.md) for detailed installation instructions and plugin documentation.
 
 ## Quick Links
 
+### Installation & Usage
 - **[PLUGIN_INSTALLATION.md](PLUGIN_INSTALLATION.md)** - Installation guide
 - **[AGENT_USAGE_SCENARIOS.md](AGENT_USAGE_SCENARIOS.md)** - Practical usage examples
-- **[CONTRIBUTING.md](CONTRIBUTING.md)** - Contributing guidelines and architecture reference
 - **[WORKFLOW_DIAGRAMS.md](WORKFLOW_DIAGRAMS.md)** - Visual workflow diagrams
+
+### African Puzzle Works Design System (Fork-Specific)
+- **[FIGMA_REGISTRY.md](african-puzzle-works-design/FIGMA_REGISTRY.md)** - Component → Figma node ID registry
+- **[QUICK_START.md](african-puzzle-works-design/QUICK_START.md)** - Visual guide for component lookup
+- **[figma-sync-strategy.md](african-puzzle-works-design/references/figma-sync-strategy.md)** - Figma live sync strategy
+- **[figma-fallback-strategy.md](african-puzzle-works-design/references/figma-fallback-strategy.md)** - Intelligent fallback system
+- **[SKILL.md](african-puzzle-works-design/SKILL.md)** - Complete design system skill documentation
+
+### Contributing
+- **[CONTRIBUTING.md](CONTRIBUTING.md)** - Contributing guidelines and architecture reference
 
 ## System Architecture
 
@@ -151,6 +197,15 @@ All agents are grounded in the official Flutter documentation at https://docs.fl
 - Iterative refinement process
 - Support for Figma, screenshots, and mockups
 
+### Figma Live Sync (African Puzzle Works Fork)
+- **Real-time design data**: Always fetches latest from Figma via MCP server
+- **No stale screenshots**: Eliminates manual screenshot updates and sync issues
+- **Component registry**: Quick lookup system for instant component fetching
+- **Intelligent fallback**: 5-step discovery strategy when components not found
+- **Single source of truth**: Figma is authoritative, documentation references it
+- **Automatic validation**: Compare implementation against live Figma state
+- **Version tracking**: Design system versioning with comprehensive changelog
+
 ### Platform Parity
 - Consistent features across iOS and Android
 - Platform-specific native integrations when needed
@@ -226,13 +281,55 @@ The `flutter-patterns` skill provides on-demand reference for:
 5. **Security Patterns**: Security best practices
 
 ### african-puzzle-works-design
-The `african-puzzle-works-design` skill provides the complete design system for the African Puzzle Works mobile app:
+The `african-puzzle-works-design` skill provides the complete design system for the African Puzzle Works mobile app with a **Figma-first approach** (v2.0.0):
 
-1. **Design Tokens**: Colors, typography, spacing system (8pt grid), border radii, shadows
-2. **Component Specifications**: 30+ component specs with Flutter widget mappings
-3. **Layout Patterns**: Screen templates, navigation flows, loading/error/empty states
-4. **Flutter Theme**: Complete ThemeData configuration with ColorScheme and TextTheme
-5. **Integration**: Automatically triggered by flutter-ui-designer for African Puzzle Works projects
+1. **Figma Live Sync**: Direct integration with Figma MCP server for real-time design data
+2. **Component Registry**: [FIGMA_REGISTRY.md](african-puzzle-works-design/FIGMA_REGISTRY.md) mapping components to Figma node IDs for instant fetching
+3. **Design Tokens**: Colors, typography, spacing system (8pt grid), border radii, shadows
+4. **Component Specifications**: 30+ component specs with Flutter widget mappings
+5. **Layout Patterns**: Screen templates, navigation flows, loading/error/empty states
+6. **Flutter Theme**: Complete ThemeData configuration with ColorScheme and TextTheme
+7. **Intelligent Fallback**: 5-step progressive discovery strategy when components aren't found
+8. **Integration**: Automatically triggered by flutter-ui-designer for African Puzzle Works projects
+
+**Key Innovation**: Uses Figma as source of truth instead of static screenshots, eliminating stale design issues and ensuring implementations are always current.
+
+## Figma MCP Integration
+
+This customized version includes **Figma MCP server integration** for the African Puzzle Works Design System, enabling real-time design synchronization:
+
+### How It Works
+
+1. **Component Registry**: [FIGMA_REGISTRY.md](african-puzzle-works-design/FIGMA_REGISTRY.md) maps all design system components to Figma node IDs
+2. **Live Fetching**: Agents use `mcp__figma__get_screenshot`, `mcp__figma__get_design_context`, and `mcp__figma__get_variable_defs` tools
+3. **No Stale Screenshots**: Always fetches latest design from Figma during implementation
+4. **Automatic Validation**: Compare implementation against current Figma state
+
+### Workflow Example
+
+```
+User: "Implement the primary button"
+     ↓
+1. Check FIGMA_REGISTRY.md → Buttons (node: 362-6)
+2. Fetch live screenshot via MCP
+3. Fetch specs (colors, spacing, typography)
+4. Cross-reference references/components.md
+5. Implement with live Figma values
+     ↓
+Result: Pixel-perfect, always up-to-date implementation
+```
+
+### Intelligent Fallback Strategy
+
+When a component isn't in the registry, the system uses a 5-step progressive discovery approach:
+
+1. **URL Parsing**: Auto-extract node ID from Figma URLs
+2. **Fuzzy Matching**: Suggest similar components from registry
+3. **Hierarchical Exploration**: Navigate Figma structure via metadata
+4. **Visual Confirmation**: Show preview before implementation
+5. **Registry Updates**: Add newly-found components for future use
+
+See [references/figma-sync-strategy.md](african-puzzle-works-design/references/figma-sync-strategy.md) and [references/figma-fallback-strategy.md](african-puzzle-works-design/references/figma-fallback-strategy.md) for complete details.
 
 ## Agent Interaction Matrix
 
@@ -243,6 +340,7 @@ Agents are designed to work together:
 - **flutter-platform-channel-architect** coordinates with flutter-ios-integration and flutter-android-integration
 - **flutter-performance-analyzer** feeds findings to flutter-performance-optimizer
 - **flutter-ios-deployment** and **flutter-android-deployment** work in parallel
+- **flutter-ui-designer** integrates with **african-puzzle-works-design** skill and Figma MCP for real-time design sync
 
 ## Repository Structure
 
@@ -278,15 +376,31 @@ flutter-claude-code/
 │   │   └── flutter-android-deployment.md
 │   └── skills/                    # Reusable skill definitions
 │       └── flutter-patterns/      # Flutter patterns & best practices
-├── african-puzzle-works-design/   # African Puzzle Works Design System skill
-│   ├── SKILL.md                   # Skill definition and overview
+├── african-puzzle-works-design/   # African Puzzle Works Design System skill (v2.0.0)
+│   ├── SKILL.md                   # Skill definition and overview (Figma-first approach)
+│   ├── FIGMA_REGISTRY.md          # Component → Figma node ID registry for MCP fetching
+│   ├── QUICK_START.md             # Visual guide and decision tree for component lookup
 │   ├── references/                # Design system documentation
 │   │   ├── tokens.md              # Colors, typography, spacing, shadows
 │   │   ├── components.md          # Component specifications
 │   │   ├── patterns.md            # Layout patterns and screen templates
-│   │   └── flutter-theme.md       # ThemeData implementation guide
+│   │   ├── flutter-theme.md       # ThemeData implementation guide
+│   │   ├── figma-sync-strategy.md # Programmatic Figma sync strategy
+│   │   ├── figma-fallback-strategy.md # Intelligent fallback when components not found
+│   │   ├── measurements.md        # Precise component measurements
+│   │   ├── animations.md          # Animation specifications
+│   │   ├── states.md              # Component state documentation
+│   │   ├── icons.md               # Icon library and usage
+│   │   ├── elevation.md           # Shadow system specifications
+│   │   ├── responsive.md          # Responsive behavior guidelines
+│   │   ├── dark-mode.md           # Dark theme specifications
+│   │   └── edge-cases.md          # Edge case handling patterns
 │   └── assets/                    # Design assets and theme code
-│       ├── screens/               # Screen reference exports
+│       ├── screens/               # Reference screenshots (supplementary, not source of truth)
+│       │   ├── components/        # Component screenshots by type
+│       │   ├── screens/           # Full screen screenshots (contacts, profile, splash)
+│       │   ├── redlines/          # Annotated measurement screenshots
+│       │   └── examples/          # Edge case examples
 │       └── theme/                 # Flutter theme implementation
 │           └── app_theme.dart     # Complete ThemeData configuration
 ├── flutter-all/                   # Meta-plugin for full installation
@@ -362,9 +476,10 @@ The modular architecture allows you to start with the core design-to-implementat
 
 ---
 
-**Total Agents**: 15 specialized sub-agents
-**Total Phases**: 5 implementation phases
+**Total Agents**: 19 specialized agents
+**Total Skills**: 2 comprehensive skills (flutter-patterns + african-puzzle-works-design v2.0.0)
 **Coverage**: Complete Flutter development lifecycle
 **Platforms**: iOS, Android (with Web/Desktop extensibility)
 **Documentation Base**: Official Flutter docs at https://docs.flutter.dev
-**Status**: Ready for implementation
+**Figma Integration**: Real-time design sync via MCP server (African Puzzle Works fork)
+**Status**: Production ready
