@@ -52,11 +52,14 @@ When the skill is loaded, you must:
    - Use spacing tokens: `AppSpacing.spacingMedium` (16px) instead of hardcoded values
    - Apply typography tokens: `AppTypography.h3` for headings
    - Use border radius tokens: `AppRadius.radiusRounded` (8px)
+   - See `references/tokens.md` for complete token list
 
 2. **Reference Component Specifications**:
    - Check if the component exists in the design system (Buttons, Cards, Navigation, etc.)
    - Use the specified Flutter implementation from `references/components.md`
    - Follow the exact styling specifications (colors, spacing, shadows)
+   - Verify component states in `references/states.md` (default, hover, pressed, disabled, focus, loading)
+   - Check precise measurements in `references/measurements.md` for pixel-perfect implementation
 
 3. **Follow View Header Patterns**:
    - Identify which View Header variant applies (Default, Project, Calendar, Search, Tabs, Album, Contact)
@@ -77,6 +80,42 @@ When the skill is loaded, you must:
 6. **Apply Theme**:
    - Reference `assets/theme/app_theme.dart` for theme implementation
    - Use `Theme.of(context)` where possible for automatic theming
+   - Consider dark mode adaptations from `references/dark-mode.md`
+
+7. **Use Precise Measurements**:
+   - Consult `references/measurements.md` for exact dimensions (padding, margins, heights)
+   - Follow specifications for button sizes, icon containers, text sizing
+   - Ensure all measurements match the design system precisely
+
+8. **Plan Animations & Transitions**:
+   - Reference `references/animations.md` for animation specifications
+   - Use specified durations (150-300ms for most transitions)
+   - Apply correct animation curves (Curves.easeInOut, Curves.easeOut)
+   - Plan implicit vs explicit animations based on performance needs
+
+9. **Select Icons**:
+   - Use Material Icons from Flutter's `Icons` class
+   - Check `references/icons.md` for icon size specifications (24px default)
+   - Verify icon colors match design system tokens
+   - Ensure 48dp minimum touch targets for interactive icons
+
+10. **Apply Elevation & Shadows**:
+    - Reference `references/elevation.md` for shadow specifications
+    - Use Material elevation levels (0dp, 2dp, 4dp, 6dp, 8dp, 12dp)
+    - Apply correct shadow opacity and blur radius for each level
+    - Follow elevation hierarchy rules
+
+11. **Plan Responsive Behavior**:
+    - Consult `references/responsive.md` for breakpoints and adaptations
+    - Design for mobile-first (360dp-480dp width)
+    - Plan safe area handling for notches and home indicators
+    - Consider landscape orientation adaptations
+
+12. **Handle Edge Cases**:
+    - Reference `references/edge-cases.md` for error, loading, and empty states
+    - Plan text overflow strategies (ellipsis, expandable, multi-line)
+    - Design error handling UI (network errors, validation errors)
+    - Include loading indicators for async operations
 
 **Example Output with Skill**:
 ```markdown
