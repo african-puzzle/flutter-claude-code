@@ -24,6 +24,123 @@ Use this agent for:
 - Identifying complex widgets that should be extracted into custom components
 - Recommending styling strategies (ThemeData, TextStyle, BoxDecoration approaches)
 
+## Design System Integration
+
+### African Puzzle Works Design System
+
+**IMPORTANT**: When working on African Puzzle Works screens or components, you MUST load and reference the `african-puzzle-works-design` skill for design system context.
+
+**Detection Criteria** - Load the skill if ANY of these apply:
+- User mentions "African Puzzle Works" or "African Puzzle" in their request
+- Design file is from the African Puzzle Works Figma project
+- User is implementing screens for the African Puzzle Works app
+- User references design tokens like "Primary 500", "spacing-med", or "Open Sans"
+
+**How to Load**:
+```markdown
+Before analyzing the design, reference the african-puzzle-works-design skill:
+"I'll load the african-puzzle-works-design skill to access the design system context."
+Then read: @african-puzzle-works-design/SKILL.md
+```
+
+**Integration Instructions**:
+
+When the skill is loaded, you must:
+
+1. **Use Design System Tokens**:
+   - Reference colors by token name: `AppColors.primary500` instead of raw hex values
+   - Use spacing tokens: `AppSpacing.spacingMedium` (16px) instead of hardcoded values
+   - Apply typography tokens: `AppTypography.h3` for headings
+   - Use border radius tokens: `AppRadius.radiusRounded` (8px)
+
+2. **Reference Component Specifications**:
+   - Check if the component exists in the design system (Buttons, Cards, Navigation, etc.)
+   - Use the specified Flutter implementation from `references/components.md`
+   - Follow the exact styling specifications (colors, spacing, shadows)
+
+3. **Follow View Header Patterns**:
+   - Identify which View Header variant applies (Default, Project, Calendar, Search, Tabs, Album, Contact)
+   - Reference the specific implementation pattern from the skill
+   - Use the purple gradient background with proper shadow specs
+
+4. **Map Design Tokens**:
+   - Extract colors and map to `AppColors.*` tokens
+   - Extract spacing and map to `AppSpacing.*` tokens
+   - Extract typography and map to `AppTypography.*` styles
+   - Reference `references/tokens.md` for complete token list
+
+5. **Leverage Screen Patterns**:
+   - Check `references/patterns.md` for common layouts
+   - Use standard screen templates (Grid, List, Profile, etc.)
+   - Follow 8pt grid system for all spacing
+
+6. **Apply Theme**:
+   - Reference `assets/theme/app_theme.dart` for theme implementation
+   - Use `Theme.of(context)` where possible for automatic theming
+
+**Example Output with Skill**:
+```markdown
+## Widget Hierarchy (African Puzzle Works)
+
+Scaffold
+└── DefaultViewHeader (from design system)
+    ├── Purple gradient background (Primary 500)
+    ├── Menu icon (32px white)
+    ├── Title: "Rendez-vous" (22px Bold, centered, white with shadow)
+    └── More icon (24px white)
+└── CalendarSubHeader (from design system)
+    ├── Month navigation
+    ├── Calendar grid (7 columns)
+    └── Selected date indicator (Primary 500 background)
+└── Body: ListView.separated
+    └── Appointment cards
+
+## Design Token Mappings
+
+Colors:
+- Header Background: AppColors.primary500 (#3D2664)
+- Selected Date: AppColors.primary500
+- Text on Header: AppColors.basicWhite
+- Calendar Text: AppColors.primary500
+
+Typography:
+- Header Title: 22px Bold Open Sans (AppTypography.h5)
+- Month Label: 18px Bold (AppTypography.buttonLarge)
+- Date Numbers: 18px Bold
+
+Spacing:
+- Header Padding: AppSpacing.spacingSmall (8px)
+- Calendar Gaps: AppSpacing.spacingXs (4px)
+- Month Padding: AppSpacing.spacingMedium (16px)
+
+## Custom Widgets
+
+1. CalendarViewHeader (use implementation from design system)
+   - Purple gradient header with navigation
+   - Integrated calendar grid
+   - Month navigation controls
+
+2. AppointmentCard (custom for this screen)
+   - Follow Card specs from design system
+   - 8px radius, 16px padding
+   - White background with shadow
+```
+
+**Benefits of Using the Skill**:
+- **Consistency**: Ensures all screens use the same design tokens
+- **Accuracy**: Exact color values, spacing, and typography from the design system
+- **Speed**: Pre-defined components reduce analysis time
+- **Completeness**: Access to all 16 View Header variants, Bottom Sheets, Snackbars, Context Menus, etc.
+- **Theme Integration**: Direct access to ready-to-use theme file
+
+**Skill Contents Summary**:
+- **Tokens**: 146 design variables (colors, spacing, typography, radius, borders)
+- **Components**: Buttons, Inputs, Cards, Navigation, View Headers (7 variants), Bottom Sheets (4 types), Snackbars (3 types), Context Menu, Bottom App Bar, FAB, Badges, Dialogs, List Items
+- **Patterns**: 7 screen templates, state patterns, layout guidelines
+- **Theme**: Complete Flutter theme implementation with token classes
+
+If working on African Puzzle Works designs, ALWAYS check the skill first before making widget recommendations.
+
 ## Widget Selection Methodology
 
 ### Core Principle: Composition over Complexity
