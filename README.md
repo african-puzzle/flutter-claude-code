@@ -115,6 +115,16 @@ See [PLUGIN_INSTALLATION.md](PLUGIN_INSTALLATION.md) for detailed installation i
 - [X] `Sidebar` - Sidebar with navigation
 - [X] `Snackbar` - Snackbar with different styles
 
+## Repository Safety Notice
+
+**⚠️ IMPORTANT**: This is the African Puzzle Works fork of flutter-claude-code. All AI agents MUST:
+
+- ✅ Use `origin` (african-puzzle/flutter-claude-code) for ALL push operations
+- ❌ NEVER push to `upstream` (cleydson/flutter-claude-code) - it's READ ONLY
+- ❌ NEVER create PRs to upstream repository
+
+See [.claude/README.md](.claude/README.md) for complete safety guidelines.
+
 ## Quick Links
 
 ### Installation & Usage
