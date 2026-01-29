@@ -2,13 +2,22 @@
 
 This file maps African Puzzle Works design system components to their Figma node IDs for quick MCP access.
 
-## Figma File
+## Figma Files
 
+### Design System Components
 - **File Key**: `8S2Jt5xKHfTmlI8rSR6AcX`
 - **File Name**: African Puzzle Design System
 - **Base URL**: `https://figma.com/design/8S2Jt5xKHfTmlI8rSR6AcX/African-Puzzle-Design-System`
-- **Registry Version**: v1.6.0
-- **Total Components**: 21 components across 18 categories
+
+### Screen Designs
+- **File Key**: `zTFAYthaXpFu8nr6nFPDCH`
+- **File Name**: African Puzzle WORKS Screen Designs
+- **Base URL**: `https://figma.com/design/zTFAYthaXpFu8nr6nFPDCH/African-Puzzle-WORKS-Screen-Designs`
+
+### Registry Status
+- **Registry Version**: v1.7.0
+- **Total Components**: 24 components across 20 categories
+- **Total Screens**: 5 screens
 
 ## Design System Components
 
@@ -268,24 +277,108 @@ Screenshot: mcp__figma__get_screenshot(fileKey="8S2Jt5xKHfTmlI8rSR6AcX", nodeId=
 Context: mcp__figma__get_design_context(fileKey="8S2Jt5xKHfTmlI8rSR6AcX", nodeId="3164-18368")
 ```
 
+### Carousel
+- **Node ID**: `414-1750`
+- **Full URL**: https://www.figma.com/design/8S2Jt5xKHfTmlI8rSR6AcX/African-Puzzle-Design-System?node-id=414-1750
+- **Contains**: Horizontal image carousel/gallery component with 8 image thumbnails, first item active/selected (indicated by blue border), used for browsing multiple images or content items
+- **Last Verified**: 2026-01-29
+
+**MCP Fetch Commands**:
+```
+Screenshot: mcp__figma__get_screenshot(fileKey="8S2Jt5xKHfTmlI8rSR6AcX", nodeId="414-1750")
+Context: mcp__figma__get_design_context(fileKey="8S2Jt5xKHfTmlI8rSR6AcX", nodeId="414-1750")
+```
+
+### Carousel (File Types)
+- **Node ID**: `4621-34132`
+- **Full URL**: https://www.figma.com/design/8S2Jt5xKHfTmlI8rSR6AcX/African-Puzzle-Design-System?node-id=4621-34132
+- **Contains**: Horizontal file carousel component displaying 8 file type cards (PDF, PowerPoint, Word, Excel, SVG, JPG, JPEG, PSD), each card shows file icon, filename ("AP WORKS Com..."), and date ("2022-Fev-12"), used for browsing attached documents and files
+- **Last Verified**: 2026-01-29
+
+**MCP Fetch Commands**:
+```
+Screenshot: mcp__figma__get_screenshot(fileKey="8S2Jt5xKHfTmlI8rSR6AcX", nodeId="4621-34132")
+Context: mcp__figma__get_design_context(fileKey="8S2Jt5xKHfTmlI8rSR6AcX", nodeId="4621-34132")
+```
+
+### More Menu / Context Menu
+- **Node ID**: `33736-41988`
+- **File Key**: `zTFAYthaXpFu8nr6nFPDCH` (Screen Designs)
+- **Full URL**: https://www.figma.com/design/zTFAYthaXpFu8nr6nFPDCH/African-Puzzle-WORKS-Screen-Designs?node-id=33736-41988
+- **Contains**: Context menu overlay with 6 action items: Couverture (Cover, image icon), Dégrouper (Ungroup, folder icon), Prix (Price, price tag icon), Partager (Share, share icon), + Ajouter au programme (Add to program, layers icon), Effacer (Delete, red trash icon), displayed over photo detail view
+- **Last Verified**: 2026-01-29
+
+**MCP Fetch Commands**:
+```
+Screenshot: mcp__figma__get_screenshot(fileKey="zTFAYthaXpFu8nr6nFPDCH", nodeId="33736-41988")
+Context: mcp__figma__get_design_context(fileKey="zTFAYthaXpFu8nr6nFPDCH", nodeId="33736-41988")
+```
+
 ## Screen Examples
 
-### TODO: Add Screen Node IDs
+### Album List View (Empty State)
+- **Node ID**: `33677-28088`
+- **File Key**: `zTFAYthaXpFu8nr6nFPDCH`
+- **Full URL**: https://www.figma.com/design/zTFAYthaXpFu8nr6nFPDCH/African-Puzzle-WORKS-Screen-Designs?node-id=33677-28088
+- **Contains**: Empty state screen for Album view with user profile header (avatar, name "Moussa BEMBA"), empty state message "Start your album and create categories of similar contents", content type icons (microphone, camera, document, note), orange FAB with plus icon, bottom navigation bar (Album, Rendez-vous, Programmes, Contacts), hamburger menu and lock icon in header
+- **Last Verified**: 2026-01-29
 
-As screens are created in Figma, add them here with:
-- Screen name
-- Node ID
-- Full URL
-- Description
-- Last verified date
+**MCP Fetch Commands**:
+```
+Screenshot: mcp__figma__get_screenshot(fileKey="zTFAYthaXpFu8nr6nFPDCH", nodeId="33677-28088")
+Context: mcp__figma__get_design_context(fileKey="zTFAYthaXpFu8nr6nFPDCH", nodeId="33677-28088")
+```
 
-Example format:
-```markdown
-### Home Screen
-- **Node ID**: `[to-be-added]`
-- **Full URL**: [to-be-added]
-- **Contains**: [description]
-- **Last Verified**: [date]
+### Album List View (With Content)
+- **Node ID**: `33679-57077`
+- **File Key**: `zTFAYthaXpFu8nr6nFPDCH`
+- **Full URL**: https://www.figma.com/design/zTFAYthaXpFu8nr6nFPDCH/African-Puzzle-WORKS-Screen-Designs?node-id=33679-57077
+- **Contains**: Album view with content showing user profile header (avatar, name "Boutique Moussa"), 2x2 grid of fashion/clothing photos, item count badge (number "3" on bottom-right card), orange FAB with plus icon, bottom navigation bar (Album, Rendez-vous, Programmes, Contacts), hamburger menu and lock icon in header
+- **Last Verified**: 2026-01-29
+
+**MCP Fetch Commands**:
+```
+Screenshot: mcp__figma__get_screenshot(fileKey="zTFAYthaXpFu8nr6nFPDCH", nodeId="33679-57077")
+Context: mcp__figma__get_design_context(fileKey="zTFAYthaXpFu8nr6nFPDCH", nodeId="33679-57077")
+```
+
+### Calendar List View (Empty State)
+- **Node ID**: `34171-248257`
+- **File Key**: `zTFAYthaXpFu8nr6nFPDCH`
+- **Full URL**: https://www.figma.com/design/zTFAYthaXpFu8nr6nFPDCH/African-Puzzle-WORKS-Screen-Designs?node-id=34171-248257
+- **Contains**: Empty state screen for Calendar/Rendez-vous view with header (hamburger menu, "Rendez-vous" title, help icon), calendar widget showing "FEVRIER 2024" with month navigation arrows, week days (Dim-Sam), dates with day "1" selected, empty state message "Create a new appointment. Nothing scheduled for today.", orange FAB with plus icon, bottom navigation bar (Album, Rendez-vous, Programmes, Contacts) with Rendez-vous highlighted
+- **Last Verified**: 2026-01-29
+
+**MCP Fetch Commands**:
+```
+Screenshot: mcp__figma__get_screenshot(fileKey="zTFAYthaXpFu8nr6nFPDCH", nodeId="34171-248257")
+Context: mcp__figma__get_design_context(fileKey="zTFAYthaXpFu8nr6nFPDCH", nodeId="34171-248257")
+```
+
+### Calendar List View (With Content)
+- **Node ID**: `34180-348591`
+- **File Key**: `zTFAYthaXpFu8nr6nFPDCH`
+- **Full URL**: https://www.figma.com/design/zTFAYthaXpFu8nr6nFPDCH/African-Puzzle-WORKS-Screen-Designs?node-id=34180-348591
+- **Contains**: Calendar view with appointments showing header (back arrow, "Rendez-vous" title, help icon), calendar widget showing "FEVRIER 2024" with day "2" selected (notification badge showing "2"), list of appointment cards: "Fatou DIOME" (155 000 XOF, sun icon), "Mamadou DIOP" (2 000 000 XOF, moon icon), orange FAB with plus icon, bottom navigation bar with Rendez-vous highlighted
+- **Last Verified**: 2026-01-29
+
+**MCP Fetch Commands**:
+```
+Screenshot: mcp__figma__get_screenshot(fileKey="zTFAYthaXpFu8nr6nFPDCH", nodeId="34180-348591")
+Context: mcp__figma__get_design_context(fileKey="zTFAYthaXpFu8nr6nFPDCH", nodeId="34180-348591")
+```
+
+### Photo Detail View
+- **Node ID**: `33681-47508`
+- **File Key**: `zTFAYthaXpFu8nr6nFPDCH`
+- **Full URL**: https://www.figma.com/design/zTFAYthaXpFu8nr6nFPDCH/African-Puzzle-WORKS-Screen-Designs?node-id=33681-47508
+- **Contains**: Full-screen photo detail/gallery view with top navigation (back arrow, three-dot menu), large photo display area showing fashion/clothing image, bottom thumbnail strip with 4 images (current photo highlighted with blue border), system navigation bar
+- **Last Verified**: 2026-01-29
+
+**MCP Fetch Commands**:
+```
+Screenshot: mcp__figma__get_screenshot(fileKey="zTFAYthaXpFu8nr6nFPDCH", nodeId="33681-47508")
+Context: mcp__figma__get_design_context(fileKey="zTFAYthaXpFu8nr6nFPDCH", nodeId="33681-47508")
 ```
 
 ## Usage Instructions
@@ -369,7 +462,8 @@ Track major Figma file changes here:
 - **v1.5.0** (2026-01-29): Added Media category (Audio Player)
 - **v1.5.1** (2026-01-29): Documentation fix: corrected "Project Cards" to "Project Media Cards"; Added Project List Card, Calendar List Item, Contact List Item (same session)
 - **v1.6.0** (2026-01-29): Added Forms category (Inputs with text, password, price, textarea, phone, PIN/OTP variants); Added Calendar Picker Bottom Sheet, Input Field States, Snackbar, Text Note Bottom Sheet, Sidebar Drawer (same session)
-- **Current**: v1.6.0
+- **v1.7.0** (2026-01-29): Added Screens category; Added second Figma file for screen designs (African Puzzle WORKS Screen Designs); Added Album List View screens (Empty State, With Content), Calendar List View screens (Empty State, With Content), Photo Detail View; Added Carousel component (images and file types variants), More Menu / Context Menu
+- **Current**: v1.7.0
 
 ## Troubleshooting
 
