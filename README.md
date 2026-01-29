@@ -84,32 +84,36 @@ See [PLUGIN_INSTALLATION.md](PLUGIN_INSTALLATION.md) for detailed installation i
 
 ## To Do: Items to Add to Figma Component Registry
 
-- [X] `Button` - Primary, Secondary, Text, Icon, Segmented button variants with all states
-- [X] `Bottom Sheets` - Action sheet, Selection sheet, Calendar sheet, Price sheet variations
-- [X] `View Headers` - 7 header variants (Default, Project, Calendar, Search, Tabs, Album, Contact)
-- [X] `Primitives / Colors` - Complete color palette with all shades (Primary, Basic, Success, Info, Warning, Danger)
-- [X] `Icons` - White, Dark, and Other icon sets
-- [ ] `Bottom Nav` - Bottom navigation bar with icons
-- [ ] `Cards` -  
-- [ ] `Inputs` - Text input with validation and error states
-- [ ] `Forms` - Form with validation and error states
-- [ ] `List` - List with items and separators
-- [ ] `Navigation` - Bottom navigation bar with icons
-- [ ] `Progress` - Progress indicator with different styles
-- [ ] `Audio player` - Audio player with controls
-- [ ] `Audio Recorder` - Audio recorder with controls
-- [ ] `Project List` - Project list with items
-- [ ] `Project Detail` - Project detail with items
-- [ ] `Calendar List` - Calendar list with items
-- [ ] `Search` - Search with results
-- [ ] `Tabs` - Tabs with content
-- [ ] `Album` - Album with images
-- [ ] `Contact's Projects` - Contact with projects
-- [ ] `Measurement Card` - Measurement card with details
-- [ ] `Sidebar` - Sidebar with navigation
-- [ ] `Image Carousel` - Image carousel with navigation
+### Views
+- [ ] `Album List view` - Album with images
+- [ ] `Calendar List view` - Calendar list with items
 - [ ] `Photo Detail view` - Photo detail view with navigation and menu
+- [ ] `Project Detail view` - Project detail with items
+- [ ] `Project List view` - Project list with items
+- [ ] `Search view` - Search with results
+- [ ] `Contact List view` - Contact list with items
 
+### Components
+- [ ] `Audio Recorder` - Audio recorder with controls
+- [X] `Audio player` - Audio player with controls
+- [X] `Bottom Nav` - Bottom navigation bar with icons
+- [X] `Bottom Sheets` - Action sheet, Selection sheet, Calendar sheet, Price sheet variations
+- [X] `Button` - Primary, Secondary, Text, Icon, Segmented button variants with all states
+- [ ] `Calendar List item` - Calendar list item with details
+- [X] `Calendar Picker` - Calendar picker with different styles
+- [X] `Contact List item` - Contact list item with details
+- [ ] `Contact's Projects Card` - Contact with projects
+- [ ] `Forms` - Form with validation and error states
+- [X] `Icons` - White, Dark, and Other icon sets
+- [ ] `Image Carousel` - Image carousel with navigation
+- [X] `Inputs` - Text input with validation and error states
+- [X] `Measurement Card` - Measurement card with details
+- [X] `Primitives / Colors` - Complete color palette with all shades (Primary, Basic, Success, Info, Warning, Danger)
+- [ ] `Progress` - Progress indicator with different styles
+- [X] `Project List Cards` - Project Detail Items for list
+- [X] `Project Media Cards` - Project cards with different types of content
+- [X] `Sidebar` - Sidebar with navigation
+- [X] `Snackbar` - Snackbar with different styles
 
 ## Quick Links
 

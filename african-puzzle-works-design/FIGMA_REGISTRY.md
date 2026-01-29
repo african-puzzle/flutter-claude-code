@@ -7,6 +7,8 @@ This file maps African Puzzle Works design system components to their Figma node
 - **File Key**: `8S2Jt5xKHfTmlI8rSR6AcX`
 - **File Name**: African Puzzle Design System
 - **Base URL**: `https://figma.com/design/8S2Jt5xKHfTmlI8rSR6AcX/African-Puzzle-Design-System`
+- **Registry Version**: v1.6.0
+- **Total Components**: 21 components across 18 categories
 
 ## Design System Components
 
@@ -22,6 +24,30 @@ Screenshot: mcp__figma__get_screenshot(fileKey="8S2Jt5xKHfTmlI8rSR6AcX", nodeId=
 Context: mcp__figma__get_design_context(fileKey="8S2Jt5xKHfTmlI8rSR6AcX", nodeId="362-6")
 ```
 
+### Inputs
+- **Node ID**: `613-112`
+- **Full URL**: https://www.figma.com/design/8S2Jt5xKHfTmlI8rSR6AcX/African-Puzzle-Design-System?node-id=613-112
+- **Contains**: Text input, password input with icon, price input, multi-line text area, phone number input with country code dropdown, PIN/OTP code inputs (4-digit), various states including error states
+- **Last Verified**: 2026-01-29
+
+**MCP Fetch Commands**:
+```
+Screenshot: mcp__figma__get_screenshot(fileKey="8S2Jt5xKHfTmlI8rSR6AcX", nodeId="613-112")
+Context: mcp__figma__get_design_context(fileKey="8S2Jt5xKHfTmlI8rSR6AcX", nodeId="613-112")
+```
+
+### Input Field States
+- **Node ID**: `7298-18046`
+- **Full URL**: https://www.figma.com/design/8S2Jt5xKHfTmlI8rSR6AcX/African-Puzzle-Design-System?node-id=7298-18046
+- **Contains**: Input field component showing all interactive states: default/disabled (gray), focus (orange border), active (blue border), error (red border with pink background)
+- **Last Verified**: 2026-01-29
+
+**MCP Fetch Commands**:
+```
+Screenshot: mcp__figma__get_screenshot(fileKey="8S2Jt5xKHfTmlI8rSR6AcX", nodeId="7298-18046")
+Context: mcp__figma__get_design_context(fileKey="8S2Jt5xKHfTmlI8rSR6AcX", nodeId="7298-18046")
+```
+
 ### Bottom Sheets
 - **Node ID**: `906-2533`
 - **Full URL**: https://www.figma.com/design/8S2Jt5xKHfTmlI8rSR6AcX/African-Puzzle-Design-System?node-id=906-2533
@@ -32,6 +58,30 @@ Context: mcp__figma__get_design_context(fileKey="8S2Jt5xKHfTmlI8rSR6AcX", nodeId
 ```
 Screenshot: mcp__figma__get_screenshot(fileKey="8S2Jt5xKHfTmlI8rSR6AcX", nodeId="906-2533")
 Context: mcp__figma__get_design_context(fileKey="8S2Jt5xKHfTmlI8rSR6AcX", nodeId="906-2533")
+```
+
+### Calendar Picker Bottom Sheet
+- **Node ID**: `1056-121`
+- **Full URL**: https://www.figma.com/design/8S2Jt5xKHfTmlI8rSR6AcX/African-Puzzle-Design-System?node-id=1056-121
+- **Contains**: Date picker with month/year selection view and day selection calendar view, time period options (Matin, Après-midi, Soir), reminder alert toggle
+- **Last Verified**: 2026-01-29
+
+**MCP Fetch Commands**:
+```
+Screenshot: mcp__figma__get_screenshot(fileKey="8S2Jt5xKHfTmlI8rSR6AcX", nodeId="1056-121")
+Context: mcp__figma__get_design_context(fileKey="8S2Jt5xKHfTmlI8rSR6AcX", nodeId="1056-121")
+```
+
+### Text Note Bottom Sheet
+- **Node ID**: `352-247`
+- **Full URL**: https://www.figma.com/design/8S2Jt5xKHfTmlI8rSR6AcX/African-Puzzle-Design-System?node-id=352-247
+- **Contains**: Text note editor/viewer bottom sheet with multiple states: view mode with text content, edit mode with OK button, empty/placeholder states, action icons (edit, share, delete), close button
+- **Last Verified**: 2026-01-29
+
+**MCP Fetch Commands**:
+```
+Screenshot: mcp__figma__get_screenshot(fileKey="8S2Jt5xKHfTmlI8rSR6AcX", nodeId="352-247")
+Context: mcp__figma__get_design_context(fileKey="8S2Jt5xKHfTmlI8rSR6AcX", nodeId="352-247")
 ```
 
 ### View Headers
@@ -68,6 +118,154 @@ Variables: mcp__figma__get_variable_defs(fileKey="8S2Jt5xKHfTmlI8rSR6AcX", nodeI
 ```
 Screenshot: mcp__figma__get_screenshot(fileKey="8S2Jt5xKHfTmlI8rSR6AcX", nodeId="341-157")
 Context: mcp__figma__get_design_context(fileKey="8S2Jt5xKHfTmlI8rSR6AcX", nodeId="341-157")
+```
+
+### Bottom Nav
+- **Node ID**: `369-373`
+- **Full URL**: https://www.figma.com/design/8S2Jt5xKHfTmlI8rSR6AcX/African-Puzzle-Design-System?node-id=369-373
+- **Contains**: Bottom navigation bar with 4 items (Album, Rendez-vous, Programmes, Contacts)
+- **Last Verified**: 2026-01-29
+
+**MCP Fetch Commands**:
+```
+Screenshot: mcp__figma__get_screenshot(fileKey="8S2Jt5xKHfTmlI8rSR6AcX", nodeId="369-373")
+Context: mcp__figma__get_design_context(fileKey="8S2Jt5xKHfTmlI8rSR6AcX", nodeId="369-373")
+```
+
+### Sidebar Drawer
+- **Node ID**: `1380-0`
+- **Full URL**: https://www.figma.com/design/8S2Jt5xKHfTmlI8rSR6AcX/African-Puzzle-Design-System?node-id=1380-0
+- **Contains**: Navigation drawer with two states: main menu with user profile header (avatar, name), navigation items (Mon Compte, Album, Programmes, Rendez-vous, Contacts, Transactions, Assistance), app version, logout button; secondary menu with back button and info items (Contactez-nous, Comment ça marche, Terms & Conditions, Privacy Policy)
+- **Last Verified**: 2026-01-29
+
+**MCP Fetch Commands**:
+```
+Screenshot: mcp__figma__get_screenshot(fileKey="8S2Jt5xKHfTmlI8rSR6AcX", nodeId="1380-0")
+Context: mcp__figma__get_design_context(fileKey="8S2Jt5xKHfTmlI8rSR6AcX", nodeId="1380-0")
+```
+
+### Measurement Card
+- **Node ID**: `7781-34293`
+- **Full URL**: https://www.figma.com/design/8S2Jt5xKHfTmlI8rSR6AcX/African-Puzzle-Design-System?node-id=7781-34293
+- **Contains**: Body measurement card showing front and back views with measurement points
+- **Last Verified**: 2026-01-29
+
+**MCP Fetch Commands**:
+```
+Screenshot: mcp__figma__get_screenshot(fileKey="8S2Jt5xKHfTmlI8rSR6AcX", nodeId="7781-34293")
+Context: mcp__figma__get_design_context(fileKey="8S2Jt5xKHfTmlI8rSR6AcX", nodeId="7781-34293")
+```
+
+### Project Media Cards
+
+Project media cards display different types of project content with multiple state variants.
+
+#### Audio/Recording Card
+- **Node ID**: `343-10`
+- **Full URL**: https://www.figma.com/design/8S2Jt5xKHfTmlI8rSR6AcX/African-Puzzle-Design-System?node-id=343-10
+- **Contains**: Audio waveform visualization, timestamp, multiple states (default, selected, etc.)
+- **Last Verified**: 2026-01-29
+
+**MCP Fetch Commands**:
+```
+Screenshot: mcp__figma__get_screenshot(fileKey="8S2Jt5xKHfTmlI8rSR6AcX", nodeId="343-10")
+Context: mcp__figma__get_design_context(fileKey="8S2Jt5xKHfTmlI8rSR6AcX", nodeId="343-10")
+```
+
+#### Text/Notes Card
+- **Node ID**: `7573-39191`
+- **Full URL**: https://www.figma.com/design/8S2Jt5xKHfTmlI8rSR6AcX/African-Puzzle-Design-System?node-id=7573-39191
+- **Contains**: Text content preview, multiple states (default, selected, etc.)
+- **Last Verified**: 2026-01-29
+
+**MCP Fetch Commands**:
+```
+Screenshot: mcp__figma__get_screenshot(fileKey="8S2Jt5xKHfTmlI8rSR6AcX", nodeId="7573-39191")
+Context: mcp__figma__get_design_context(fileKey="8S2Jt5xKHfTmlI8rSR6AcX", nodeId="7573-39191")
+```
+
+#### Document Card
+- **Node ID**: `7765-24658`
+- **Full URL**: https://www.figma.com/design/8S2Jt5xKHfTmlI8rSR6AcX/African-Puzzle-Design-System?node-id=7765-24658
+- **Contains**: Document icon, file name, date, multiple states (default, selected, etc.)
+- **Last Verified**: 2026-01-29
+
+**MCP Fetch Commands**:
+```
+Screenshot: mcp__figma__get_screenshot(fileKey="8S2Jt5xKHfTmlI8rSR6AcX", nodeId="7765-24658")
+Context: mcp__figma__get_design_context(fileKey="8S2Jt5xKHfTmlI8rSR6AcX", nodeId="7765-24658")
+```
+
+#### Photo/Image Card
+- **Node ID**: `7771-21640`
+- **Full URL**: https://www.figma.com/design/8S2Jt5xKHfTmlI8rSR6AcX/African-Puzzle-Design-System?node-id=7771-21640
+- **Contains**: Photo/image preview, multiple states (default, selected, etc.)
+- **Last Verified**: 2026-01-29
+
+**MCP Fetch Commands**:
+```
+Screenshot: mcp__figma__get_screenshot(fileKey="8S2Jt5xKHfTmlI8rSR6AcX", nodeId="7771-21640")
+Context: mcp__figma__get_design_context(fileKey="8S2Jt5xKHfTmlI8rSR6AcX", nodeId="7771-21640")
+```
+
+### Project List Card
+- **Node ID**: `7895-12007`
+- **Full URL**: https://www.figma.com/design/8S2Jt5xKHfTmlI8rSR6AcX/African-Puzzle-Design-System?node-id=7895-12007
+- **Contains**: Horizontal list-style project cards with 3 state variants (empty/placeholder, with image background, new draft), displays project name, price, and time indicator
+- **Last Verified**: 2026-01-29
+
+**MCP Fetch Commands**:
+```
+Screenshot: mcp__figma__get_screenshot(fileKey="8S2Jt5xKHfTmlI8rSR6AcX", nodeId="7895-12007")
+Context: mcp__figma__get_design_context(fileKey="8S2Jt5xKHfTmlI8rSR6AcX", nodeId="7895-12007")
+```
+
+### Calendar List Item
+- **Node ID**: `7895-12263`
+- **Full URL**: https://www.figma.com/design/8S2Jt5xKHfTmlI8rSR6AcX/African-Puzzle-Design-System?node-id=7895-12263
+- **Contains**: Horizontal list item for calendar/schedule views with thumbnail, project name, price, and status indicator
+- **Last Verified**: 2026-01-29
+
+**MCP Fetch Commands**:
+```
+Screenshot: mcp__figma__get_screenshot(fileKey="8S2Jt5xKHfTmlI8rSR6AcX", nodeId="7895-12263")
+Context: mcp__figma__get_design_context(fileKey="8S2Jt5xKHfTmlI8rSR6AcX", nodeId="7895-12263")
+```
+
+### Contact List Item
+- **Node ID**: `7895-11357`
+- **Full URL**: https://www.figma.com/design/8S2Jt5xKHfTmlI8rSR6AcX/African-Puzzle-Design-System?node-id=7895-11357
+- **Contains**: Contact list items with multiple variants including header with profile photo and actions, contact entries with avatar/name/phone, project list views with thumbnails and pricing
+- **Last Verified**: 2026-01-29
+
+**MCP Fetch Commands**:
+```
+Screenshot: mcp__figma__get_screenshot(fileKey="8S2Jt5xKHfTmlI8rSR6AcX", nodeId="7895-11357")
+Context: mcp__figma__get_design_context(fileKey="8S2Jt5xKHfTmlI8rSR6AcX", nodeId="7895-11357")
+```
+
+### Audio Player
+- **Node ID**: `581-2579`
+- **Full URL**: https://www.figma.com/design/8S2Jt5xKHfTmlI8rSR6AcX/African-Puzzle-Design-System?node-id=581-2579
+- **Contains**: Audio playback controls with play/pause button, progress slider, time display, close button, multiple states
+- **Last Verified**: 2026-01-29
+
+**MCP Fetch Commands**:
+```
+Screenshot: mcp__figma__get_screenshot(fileKey="8S2Jt5xKHfTmlI8rSR6AcX", nodeId="581-2579")
+Context: mcp__figma__get_design_context(fileKey="8S2Jt5xKHfTmlI8rSR6AcX", nodeId="581-2579")
+```
+
+### Snackbar
+- **Node ID**: `3164-18368`
+- **Full URL**: https://www.figma.com/design/8S2Jt5xKHfTmlI8rSR6AcX/African-Puzzle-Design-System?node-id=3164-18368
+- **Contains**: Notification snackbar with 3 variants: primary/success (dark purple background), error (light pink background), neutral (light gray background), all with checkmark icon and message text
+- **Last Verified**: 2026-01-29
+
+**MCP Fetch Commands**:
+```
+Screenshot: mcp__figma__get_screenshot(fileKey="8S2Jt5xKHfTmlI8rSR6AcX", nodeId="3164-18368")
+Context: mcp__figma__get_design_context(fileKey="8S2Jt5xKHfTmlI8rSR6AcX", nodeId="3164-18368")
 ```
 
 ## Screen Examples
@@ -154,11 +352,24 @@ Run this checklist quarterly or when Figma file is restructured:
 
 ### Figma File Version
 
+**Versioning Strategy:**
+- **Major (x.0.0)**: Breaking changes to registry structure or file organization
+- **Minor (1.x.0)**: New component categories added (e.g., Cards, Navigation, Forms)
+- **Patch (1.0.x)**: Updates to existing entries, bug fixes, documentation improvements
+
+**Note**: Individual component variants within a category do not increment the version. Components added in the same session are tracked by date in the changelog.
+
 Track major Figma file changes here:
 
-- **v1.0.0** (2026-01-15): Initial design system
-- **v1.1.0** (2026-01-28): Added View Headers, Bottom Sheets
-- **Current**: v1.1.0
+- **v1.0.0** (2026-01-15): Initial design system with Buttons, Icons, Colors
+- **v1.1.0** (2026-01-28): Added View Headers, Bottom Sheets categories
+- **v1.2.0** (2026-01-29): Added Navigation category (Bottom Nav)
+- **v1.3.0** (2026-01-29): Added Cards category (Measurement Card)
+- **v1.4.0** (2026-01-29): Added Project Media Cards category (4 card types: Audio, Text, Document, Photo)
+- **v1.5.0** (2026-01-29): Added Media category (Audio Player)
+- **v1.5.1** (2026-01-29): Documentation fix: corrected "Project Cards" to "Project Media Cards"; Added Project List Card, Calendar List Item, Contact List Item (same session)
+- **v1.6.0** (2026-01-29): Added Forms category (Inputs with text, password, price, textarea, phone, PIN/OTP variants); Added Calendar Picker Bottom Sheet, Input Field States, Snackbar, Text Note Bottom Sheet, Sidebar Drawer (same session)
+- **Current**: v1.6.0
 
 ## Troubleshooting
 
@@ -191,5 +402,5 @@ If Figma components are restructured:
 
 ---
 
-**Last Updated**: 2026-01-28
+**Last Updated**: 2026-01-29
 **Maintained By**: African Puzzle Works Design Team
