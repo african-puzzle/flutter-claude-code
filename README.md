@@ -85,9 +85,9 @@ See [PLUGIN_INSTALLATION.md](PLUGIN_INSTALLATION.md) for detailed installation i
 ## To Do: Items to Add to Figma Component Registry
 
 ### Views
-- [ ] `Album List view` - Album with images
-- [ ] `Calendar List view` - Calendar list with items
-- [ ] `Photo Detail view` - Photo detail view with navigation and menu
+- [X] `Album List view` - Album with images
+- [X] `Calendar List view` - Calendar list with items
+- [X] `Photo Detail view` - Photo detail view with navigation and menu
 - [ ] `Project Detail view` - Project detail with items
 - [ ] `Project List view` - Project list with items
 - [ ] `Search view` - Search with results
@@ -105,9 +105,11 @@ See [PLUGIN_INSTALLATION.md](PLUGIN_INSTALLATION.md) for detailed installation i
 - [ ] `Contact's Projects Card` - Contact with projects
 - [ ] `Forms` - Form with validation and error states
 - [X] `Icons` - White, Dark, and Other icon sets
-- [ ] `Image Carousel` - Image carousel with navigation
+- [X] `Image Carousel` - Image carousel with navigation
+- [X] `File Types Carousel` - File attachment carousel with navigation
 - [X] `Inputs` - Text input with validation and error states
 - [X] `Measurement Card` - Measurement card with details
+- [X] `More Menu / Context Menu` - Context menu with actions
 - [X] `Primitives / Colors` - Complete color palette with all shades (Primary, Basic, Success, Info, Warning, Danger)
 - [ ] `Progress` - Progress indicator with different styles
 - [X] `Project List Cards` - Project Detail Items for list
